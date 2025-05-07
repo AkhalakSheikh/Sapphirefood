@@ -73,3 +73,25 @@
 .tmargin{
     margin-left: 10px;
 }
+
+@mixin itemStyle($type) {
+    @if $type == 'veg' {
+      background-color: rgb(218, 236, 218);
+      color: green;
+    } @else {
+      background-color: rgb(242, 215, 215);
+      color: red;
+    }
+  }
+
+  .item {
+    @include itemStyle(#{type}); // Use the mixin, passing 'type' here if necessary
+  }
+
+.veg-item {
+    @include itemStyle('veg');
+  }
+  
+  .non-veg-item {
+    @include itemStyle('non-veg');
+  }
