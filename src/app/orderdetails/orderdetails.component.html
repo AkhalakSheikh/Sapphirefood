@@ -1,0 +1,43 @@
+<div class="maindiv">
+    <div class="header">
+         <div class="headertoggle">
+            <button mat-flat-button class="orderbuttons" [ngStyle]="{'background-color':checkedtype1 ? 'rgb(242, 190, 190)' : ''}">Order Type1</button>
+            <button mat-flat-button class="orderbuttons" [ngStyle]="{'background-color':checkedtype2 ? 'rgb(242, 190, 190)' : ''}">Order Type1</button>
+         </div>
+    </div>
+    <div class="mdiv1">
+        <div *ngFor="let i of orderitems; let in=index">
+            <mat-card class="mcard">
+                <mat-card-content>
+                   <div class="idiv1">
+                    <div style="width: 58%;">
+                        <div>
+                            {{i.item}}
+                        </div>
+                        <div>
+                            <span>₹{{i.mrp | number: '1.2-2'}}</span><span class="aprice">₹{{i.actualprice | number: '1.2-2'}}<span *ngIf="i.count > 1">×{{i.count}}</span></span>
+                        </div>
+                    </div>
+                    <div class="bdiv">
+                        <button mat-stroked-button class="arbuttons b1" (click)="decrese(in)"><span class="material-symbols-outlined" style="color: rgb(226, 80, 77);">remove</span></button>
+                       <button mat-stroked-button class="arbuttons" style="width: 30%;">{{i.count}}</button>
+                       <button mat-stroked-button class="arbuttons b2" (click)="increse(in)"><span class="material-symbols-outlined" style="color: green;">add</span></button>
+                    </div>
+                    <div style="cursor: pointer;">
+                        <span class="material-symbols-outlined" (click)="delete(in)">delete</span>
+                    </div>
+                   </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="subt">
+        <div class="tpadding">
+            <div>Sub Total : <span class="tfloat">{{subtotal | number: '1.2-2'}}</span></div>
+            <div>Tax : <span class="tfloat">{{taxes | number: '1.2-2'}}</span></div>
+        </div>
+    </div>
+    <div class="total">
+        <div class="tpadding">Total : <span class="ttext"><b>{{total | number: '1.2-2'}}</b></span></div>
+    </div>
+</div>

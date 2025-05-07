@@ -1,0 +1,87 @@
+.maindiv{
+    border: 2px solid gray;
+    height: 90vh;
+}
+.header{
+    background-color:  rgb(243, 218, 218);
+    height: 6.5vh;
+    padding: 3%;
+}
+.headertoggle{
+    height: 100%;background-color: white;
+    background-color: white;
+    border-radius: 1rem;
+    flex-direction: row;
+    display: flex;
+}
+.orderbuttons{
+    margin: 2%;
+    width: 50%;
+}
+::ng-deep .mdc-button {
+    min-width: 0px !important;
+}
+.mdiv1{
+    height: 57vh;
+    padding: 10% 0%;
+}
+.mcard{
+    margin: 2%;
+    border: 2px solid gray;
+}
+.idiv1{
+    flex-direction: row;
+    display: flex;
+}
+
+.aprice{
+    margin-left: 10px;
+    color: gray;
+    text-decoration: line-through;
+}
+
+.arbuttons{
+    height: 80%;
+    padding: 1% !important;
+}
+   
+    .b1{
+        background-color:rgb(247, 189, 189)
+    }
+
+    .b2{
+        background-color: rgb(200, 240, 200);
+    }
+
+.bdiv{
+    width: 35%;
+    flex-direction: row;
+    display: flex;
+}
+
+.subt{
+    height: 7vh;
+    background-color: rgb(242, 190, 190);
+    border-top: 2px solid gray;
+}
+.total{
+    height: 5.5vh;
+    background-color:rgb(242, 190, 190);
+    border-top: 2px solid gray;
+}
+.ttext{
+    float: right;
+    font-size: 20px;
+}
+
+.tpadding{
+    padding: 2%;
+}
+
+.tfloat{
+    float: right;
+}
+
+
+
+

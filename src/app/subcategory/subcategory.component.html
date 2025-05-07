@@ -1,0 +1,38 @@
+
+<div class="maindiv">
+    <div class="divpad">
+        {{data[subcatindex].name}} 
+        <span class="elfloat">
+            <span><mat-slide-toggle [(ngModel)]="isveg" (click)="toggle()" [disabled]="isnonveg">veg</mat-slide-toggle></span>
+            <span><mat-slide-toggle [(ngModel)]="isnonveg" (click)="toggle()" class="tmargin" [disabled]="isveg">Nonveg</mat-slide-toggle></span>
+        </span>
+    </div>
+    <div class="itemsdiv">
+       <div  *ngFor="let i of data[subcatindex].items.slice(startindex, endindex)" class="innerdiv">
+        <mat-card *ngIf="(isveg && i.type === 'veg') || (isnonveg && i.type === 'nonveg') || all" class="itemcards" (click)="setItom(i)" [ngStyle]="{'background-color': i.type == 'veg' ? 'rgb(218, 236, 218)' : 'rgb(242, 215, 215)','color': i.type == 'veg' ? 'green' : 'red'}">
+            {{i.item}}
+        </mat-card>
+       </div>
+       <div class="npbuttons">
+        <button mat-raised-button (click)="previous()" [disabled]="flag1">Previous</button>
+        <button mat-raised-button class="elfloat" (click)="next()" [disabled]="flag">Next</button>
+       </div>
+    </div>
+</div>
+
+
+<div class="maindiv1">
+    <div class="divpad">
+        {{addOnItoms.name}}
+    </div>
+    <div class="adon">
+        <div class="itemsdiv1">
+            <div  *ngFor="let i of addOnItoms.items" class="innerdiv1">
+                 <mat-card class="itemcards1" (click)="setadon(i)" [ngStyle]="{'background-color': i.type == 'veg' ? 'rgb(218, 236, 218)' : 'rgb(242, 215, 215)','color': i.type == 'veg' ? 'green' : 'red'}">
+                     {{i.item}}
+                 </mat-card>
+            </div>
+         </div>
+    </div>
+</div>
+
